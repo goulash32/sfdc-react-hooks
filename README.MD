@@ -6,9 +6,22 @@ A collection of React hooks that interface with the Salesforce REST API.
 sfdc-react-hooks provides no mechanism for authentication. It is up to you to handle authentication and provide an Authorization token to sfdc-react-hooks.
 
 ## ForceProvider
-All children that make use of the provided hooks must be wrapped in a `<ForceProvider>`. `<ForceProvider>` accepts a _config_ property to specify the Salesforce _instanceUrl_, _apiVersion_ (defaults to 47.0) and _authToken_:
+All children that make use of the provided hooks must be wrapped in a `<ForceProvider>`. `<ForceProvider>` accepts a _config_ property to specify the Salesforce _instanceUrl_, _apiVersion_ (defaults to 47.0), and _authToken_:
 
-## ForceProvider Example
+## Hooks
+All hooks return an object with _data_, _loading_, and _error_ properties. _data_ contains the returned data from Salesforce in a format specific to the hook, _loading_ is a boolean that states whether the REST transaction is still in progress, and _error_ is either a collection of errors returned from Salesforce, or a non-Salesforce error thrown during the REST call.
+
+### useSOQL()
+Executes a SOQL query and returns the results in _data.records_.
+
+### useSOSL()
+Executes a SOSL search and returns the results in _data.searchRecords_.
+
+### useDescribe()
+Gets the metadata for the requested SObject type and stores it in _data_.
+
+## Examples
+### ForceProvider Example
 ```javascript
 import React from 'react';
 import { ForceProvider } from 'sfdc-react-hooks';
@@ -35,7 +48,7 @@ const App = () => {
 export default App;
 ```
 
-## SOQL Example
+## useSOQL() Example
 ```javascript
 import React from 'react';
 import { useSOQL } from 'sfdc-react-hooks';
@@ -77,7 +90,7 @@ const QueryExample = () => {
 export default QueryExample;
 ```
 
-## SOSL Example
+### useSOSL() Example
 ```javascript
 import React from 'react';
 import { useSOSL } from 'sfdc-react-hooks';
@@ -118,7 +131,7 @@ const SearchExample = () => {
 export default SearchExample;
 ```
 
-## SObject Describe Example
+### useDescribe() Example
 ```javascript
 import React from 'react';
 import { useDescribe } from 'sfdc-react-hooks';
