@@ -6,7 +6,7 @@ A collection of React hooks that interface with the Salesforce REST API.
 sfdc-react-hooks provides no mechanism for authentication. It is up to you to handle authentication and provide an Authorization token to sfdc-react-hooks.
 
 ## ForceProvider
-All children that make use of the provided hooks must be wrapped in a <ForceProvider>. ForceProvider accepts a _config_ property to specify the Salesforce _instanceUrl_, _apiVersion_ (defaults to 47.0) and _authToken_:
+All children that make use of the provided hooks must be wrapped in a `<ForceProvider>`. `<ForceProvider>` accepts a _config_ property to specify the Salesforce _instanceUrl_, _apiVersion_ (defaults to 47.0) and _authToken_:
 
 ## ForceProvider Example
 ```javascript
