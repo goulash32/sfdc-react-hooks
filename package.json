@@ -10,6 +10,7 @@
   "author": "Hunter Mueller",
   "license": "MIT",
   "private": false,
+  "keywords": ["react", "hooks", "salesforce", "soql", "sosl", "sfdc"],
   "scripts": {
     "build": "yarn run babel src --out-dir dist"
   },
