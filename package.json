@@ -1,6 +1,6 @@
 {
   "name": "sfdc-react-hooks",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Unofficial SFDC REST API hooks for React.",
   "repository": {
     "type": "git",
@@ -10,7 +10,14 @@
   "author": "Hunter Mueller",
   "license": "MIT",
   "private": false,
-  "keywords": ["react", "hooks", "salesforce", "soql", "sosl", "sfdc"],
+  "keywords": [
+    "react",
+    "hooks",
+    "salesforce",
+    "soql",
+    "sosl",
+    "sfdc"
+  ],
   "scripts": {
     "build": "yarn run babel src --out-dir dist"
   },
