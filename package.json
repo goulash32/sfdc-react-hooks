@@ -1,6 +1,6 @@
 {
   "name": "sfdc-react-hooks",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Unofficial SFDC REST API hooks for React.",
   "repository": {
     "type": "git",
