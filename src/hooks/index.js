@@ -19,7 +19,7 @@ const formatQueryList = (interpolatedVariable) => {
     }
     const isNumberList = baseType === 'number';
     const formattedList = interpolatedVariable.map(value => isNumberList ? value : `'${value}'`);
-    interpolatedVariable = `(${formattedList.join(', ')})`;
+    interpolatedVariable = `(${formattedList.join(',')})`;
     return interpolatedVariable;
 }
 
@@ -54,6 +54,9 @@ const interpolateVariables = (searchOrQuery, variables, isSearch) => {
 
 const trimInterpolateAndUrlEncode = (searchOrQuery, variables, isSearch) => {
     searchOrQuery = searchOrQuery.trim();
+
+    // replace multiple spaces with single space
+    searchOrQuery = searchOrQuery.replace(/ +(?= )/g,'');
     if(variables) {
         searchOrQuery = interpolateVariables(searchOrQuery, variables, isSearch);
     }
@@ -69,7 +72,6 @@ const useSearchOrQuery = (searchOrQuery, variables, isSearch) => {
         dataState: [data, setData]
     } = useDefaultStates();
     const variableReference = useRef(variables);
-    console.log(variableReference);
     if(JSON.stringify(variables) !== JSON.stringify(variableReference.current)) {
         variableReference.current = variables;
     }
